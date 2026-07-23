@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+/* Self-hosted so there's no third-party request. One variable file per subset
+   covers weights 100-800, and unicode-range means only used subsets download. */
+@import "@fontsource-variable/jetbrains-mono";
+
+/* Manual dark mode via a .dark class on <html>, instead of Tailwind's default
+   prefers-color-scheme. Lets the toggle in main.js override the OS setting. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Warm palette built around the #f7f3f0 canvas. Defined as plain custom
+   properties so .dark can swap them — that way the markup uses bg-canvas /
+   text-body and switches themes on its own, with no dark: classes. */
+:root {
+  --canvas: #f7f3f0;
+  --surface: #f1ebe5;
+  /* Hairlines on controls and cards — deliberately quiet */
+  --line: #e2d9d1;
+  /* Structural dividers between sections — stronger, so the page reads as
+     distinct blocks rather than one continuous column */
+  --rule: #d3c5b7;
+  --body: #5f564e;
+  --heading: #1c1917;
+  --muted: #6e635a;
+  --accent: #a85a2a;
+}
+
+.dark {
+  --canvas: #1a1817;
+  --surface: #211e1c;
+  --line: #35302c;
+  --rule: #4b423b;
+  --body: #b3aaa2;
+  --heading: #f5f1ee;
+  --muted: #8a7f76;
+  --accent: #d98c4a;
+}
+
+@theme inline {
+  --color-canvas: var(--canvas);
+  --color-surface: var(--surface);
+  --color-line: var(--line);
+  --color-rule: var(--rule);
+  --color-body: var(--body);
+  --color-heading: var(--heading);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+
+  /* The "available" dot in the hero, breathing between two greens */
+  --animate-pulse-dot: pulse-dot 2.4s ease-in-out infinite;
+
+  /* Slides a gradient across the milestones button on hover */
+  --animate-shimmer: shimmer 2.5s linear infinite;
+
+  --font-mono: "JetBrains Mono Variable", ui-monospace, "SFMono-Regular",
+    Menlo, Consolas, monospace;
+
+  /* Preflight applies this to <html>, so the whole page inherits the mono. */
+  --default-font-family: var(--font-mono);
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--canvas);
+}
+
+/* green-700 at rest, green-400 at the peak. Animating background-color rather
+   than opacity keeps the dot fully solid the whole way through. */
+@keyframes pulse-dot {
+  0%,
+  100% {
+    background-color: #15803d;
+  }
+  50% {
+    background-color: #4ade80;
+  }
+}
+
+/* Pans a wide gradient sideways; pairs with a 200% background-size so only
+   part of it shows at a time, giving a looping colour sweep. */
+@keyframes shimmer {
+  to {
+    background-position: -200% center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

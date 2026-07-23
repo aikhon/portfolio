@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en" class="scroll-pt-20">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="theme-color" content="#f7f3f0" />
+
+    <title>messa — Portfolio</title>
+    <meta name="description" content="One-line description of what you do." />
+
+    <meta property="og:title" content="Your Name — Portfolio" />
+    <meta property="og:description" content="One-line description of what you do." />
+    <meta property="og:type" content="website" />
+
+    <!-- Runs before React boots, so dark mode doesn't flash light on load. -->
+    <script>
+      const stored = localStorage.getItem('theme')
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+      if (stored === 'dark' || (!stored && prefersDark)) {
+        document.documentElement.classList.add('dark')
+      }
+    </script>
+  </head>
+
+  <body class="bg-canvas text-body antialiased">
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

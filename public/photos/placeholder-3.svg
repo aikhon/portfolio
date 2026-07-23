@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <rect width="400" height="400" fill="#e7ded6" />
+  <circle cx="145" cy="145" r="26" fill="#c9bcb0" />
+  <path d="M90 265l60-78 48 60 38-44 74 62z" fill="#c9bcb0" />
+  <text x="200" y="340" font-family="monospace" font-size="17" fill="#8a7f76" text-anchor="middle">photo 3</text>
+</svg>
