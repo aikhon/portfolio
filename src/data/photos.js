@@ -7,7 +7,7 @@
 //
 // Delete the placeholders below once you've added your own.
 export const photos = [
-  { src: '/photos/placeholder-1.svg', alt: 'Placeholder — replace with your own photo' },
-  { src: '/photos/placeholder-2.svg', alt: 'Placeholder — replace with your own photo' },
-  { src: '/photos/placeholder-3.svg', alt: 'Placeholder — replace with your own photo' },
+  { src: '/photos/me3.jpg' },
+  { src: '/photos/me2.jpeg' },
+  { src: '/photos/me.jpeg' },
 ]

@@ -1,6 +1,6 @@
 export const career = [
   {
-    company: 'Robosoft LLP',
+    company: 'Robosoft',
     role: 'Junior Backend Developer',
     period: '2025',
     location: 'Astana, Kazakhstan (Remote)',
@@ -30,7 +30,7 @@ export const career = [
     highlights: [
       'Developed an autonomous Python script for parsing the OneDrive folder & finding requested data within it.'
     ],
-    tags: ['Excel', 'Python'],
+    tags: ['Excel', 'Python', 'SharePoint', 'PowerAutomate'],
     url: 'https://www.tengizchevroil.com',
   },
   {
@@ -42,7 +42,7 @@ export const career = [
     highlights: [
       'Received a recommendation letter for remarkable job from the teamlead, Abylai Sariyev.',
     ],
-    tags: ['Excel', 'Reporting'],
+    tags: ['Excel', 'Reporting', 'JDE1', 'SharePoint', 'PowerAutomate'],
     url: 'https://www.tengizchevroil.com',
   },
 ]

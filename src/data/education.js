@@ -36,7 +36,22 @@ export const education = [
         date: '2024 - 2025 (3rd year)',
         title: 'Big Data by Samsung Ltd.',
         detail: 'Successfully applied and graduated the Big Data program by Samsung Innovation Campus. Received a certificate.',
-      }
+      },
+      {
+        date: '2025 - 2026 (4rd year)',
+        title: 'First Job Offer - Robosoft',
+        detail: 'Landed my first ever job in IT field as an entry-level backend developer, ending up with a junior grade.',
+      },
+      {
+        date: '2025 - 2026 (4th year)',
+        title: 'Digital Bridge 2025',
+        detail: 'Got invited to an annual international event forum hosted in Astana, Kazakhstan; Digital Bridge 2025.',
+      },
+      {
+        date: '2025 - 2025 (4th year)',
+        title: 'KazHackStan 2025',
+        detail: 'Won a prize and competition hosted by the kazakhstani provider, PS.KZ, on an international hack forum hosted in Almaty, Kazakhstan; KazHackStan 2025.',
+      },
     ],
   },
   {
@@ -46,5 +61,5 @@ export const education = [
     hint: 'Samsung Innovation Campus is an international education campus powered by Samsung Electronics Ltd. that teaches specifically demanded CS and/or IT skills such AI, Data Analysis, IoT, etc.',
     description: 'Learning Data Engineering fundamentals and advanced methodologies that are applied on a practical basis. The course was predominantly completed, using Python and its relevant data manipulation libraries.',
     url: 'https://samsung-campus.kz/ru',
-  }
+  },
 ]
