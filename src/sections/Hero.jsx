@@ -24,6 +24,14 @@ export function Hero() {
         >
           See my work
         </a>
+        <a
+          href={site.resumeUrl}
+          target="_blank"
+          rel="noreferrer"
+          className="inline-flex items-center gap-1.5 rounded-md border border-line px-4 py-2 text-sm font-medium text-heading hover:bg-surface"
+        >
+          View CV
+        </a>
       </div>
 
       <div className="flex flex-wrap gap-2 items-center">

@@ -4,10 +4,8 @@ export const education = [
     degree: 'Associate Diploma in Software Engineering',
     period: '2022 — 2026',
     hint: 'APEC PetroTechnic Higher College is a top ranked college in the country that is located in the capital of oil; Atyrau, Kazakhstan. The college was built by the order of the First President of Republic of Kazakhstan, Nursultan Nazarbayev in order to enhance capabilities of local workers. At the moment, the college is a partner of many high-ranked institutions of Asia.',
-    description:
-      'Studying calculus, software development, and modern technologies that are in demand of the current SWE job market. Took part in most of the competitions & hackathons, representing the name of the college.',
+    description: 'Studying calculus, software development, and modern technologies that are in demand of the current SWE job market. Took part in most of the competitions & hackathons, representing the name of the college.',
     url: 'https://apec.edu.kz',
-    // TODO: edit these to your real milestones (year + what happened).
     milestones: [
       {
         date: '2023 - 2024 (2nd year)',
@@ -26,9 +24,27 @@ export const education = [
       },
       {
         date: '2024 - 2025 (3rd year)',
-        title: 'Atyrau Youth Hackathon (Education Track)',
+        title: 'Atyrau Youth Hackathon (EdTech)',
         detail: "Built an activity tracker within a certain institution for top universities, so an applicant may properly select a desired school. Won the case & 300.000KZT of funding.",
+      },
+      {
+        date: '2024 - 2025 (3rd year)',
+        title: 'First Ever Internship - Tengizchevroil',
+        detail: 'Landed first ever internship in the Finance department of the leading oil & gas company of the Republic of Kazakhstan. Received a recommendation letter from teamlead, Abylai Sariyev.'
+      },
+      {
+        date: '2024 - 2025 (3rd year)',
+        title: 'Big Data by Samsung Ltd.',
+        detail: 'Successfully applied and graduated the Big Data program by Samsung Innovation Campus. Received a certificate.',
       }
     ],
   },
+  {
+    school: 'Samsung Innovation Campus (SIC)',
+    degree: 'Certificate on Big Data',
+    period: '2025',
+    hint: 'Samsung Innovation Campus is an international education campus powered by Samsung Electronics Ltd. that teaches specifically demanded CS and/or IT skills such AI, Data Analysis, IoT, etc.',
+    description: 'Learning Data Engineering fundamentals and advanced methodologies that are applied on a practical basis. The course was predominantly completed, using Python and its relevant data manipulation libraries.',
+    url: 'https://samsung-campus.kz/ru',
+  }
 ]

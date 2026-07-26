@@ -130,7 +130,7 @@ export function EducationCard({
             role="dialog"
             aria-modal="true"
             aria-label={`Milestones at ${school}`}
-            className="relative z-10 max-h-[80vh] w-full max-w-md overflow-y-auto rounded-xl border border-line bg-canvas p-6 shadow-2xl"
+            className="relative z-10 max-h-[85vh] w-full max-w-lg overflow-y-auto rounded-xl border border-line bg-canvas p-6 shadow-2xl sm:p-8 md:max-w-2xl lg:max-w-3xl"
           >
             <div className="flex items-start justify-between gap-4">
               <div>

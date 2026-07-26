@@ -5,6 +5,7 @@ import { navItems, site } from './data/site.js'
 import { useScrollSpy } from './hooks/useScrollSpy.js'
 import { Hero } from './sections/Hero.jsx'
 import { Work } from './sections/Work.jsx'
+import { Career } from './sections/Career.jsx'
 import { Education } from './sections/Education.jsx'
 import { About } from './sections/About.jsx'
 
@@ -49,8 +50,9 @@ export default function App() {
       <div className="lg:pl-64">
         <main id="main" className="mx-auto max-w-2xl px-6">
           <Hero />
-          <Work />
+          <Career />
           <Education />
+          <Work />
           <About />
         </main>
 

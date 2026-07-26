@@ -5,7 +5,7 @@ import { education } from '../data/education.js'
 export function Education() {
   return (
     <Section id="education" title="Education">
-      <ul className="mt-8 space-y-10">
+      <ul className="mt-8 space-y-2 ">
         {education.map((item) => (
           <EducationCard key={item.school} {...item} />
         ))}
