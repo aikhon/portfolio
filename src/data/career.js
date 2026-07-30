@@ -1,5 +1,13 @@
 export const career = [
   {
+    company: 'Kaspi Montazh Service',
+    role: 'Project Control Administrator, IT Technician',
+    period: 'Present',
+    location: 'Atyrau, Kazakhstan',
+    type: 'Full-time',
+    tags: ['SharePoint', 'Excel'],
+  },
+  {
     company: 'Robosoft',
     role: 'Junior Backend Developer',
     period: '2025',
