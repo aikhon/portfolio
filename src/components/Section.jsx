@@ -4,10 +4,8 @@
 export function Section({ id, title, children }) {
   return (
     <section id={id} className="border-t border-rule py-16">
-      <h2 className="text-sm font-medium uppercase tracking-wider text-muted">
-        {title}
-      </h2>
+      <h2 className="text-sm font-medium tracking-wider text-muted">{title}</h2>
       {children}
     </section>
-  )
+  );
 }

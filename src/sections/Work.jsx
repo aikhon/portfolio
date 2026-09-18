@@ -1,15 +1,15 @@
-import { Section } from '../components/Section.jsx'
-import { ProjectCard } from '../components/ProjectCard.jsx'
-import { projects } from '../data/projects.js'
+import { Section } from "../components/Section.jsx";
+import { ProjectCard } from "../components/ProjectCard.jsx";
+import { projects } from "../data/projects.js";
 
 export function Work() {
   return (
-    <Section id="work" title="Projects">
+    <Section id="work" title="projects">
       <ul className="mt-8 space-y-10">
         {projects.map((project) => (
           <ProjectCard key={project.title} {...project} />
         ))}
       </ul>
     </Section>
-  )
+  );
 }
