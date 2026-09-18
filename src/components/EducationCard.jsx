@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react'
-import { CloseIcon } from './icons.jsx'
+import { useEffect, useState } from "react";
+import { CloseIcon } from "./icons.jsx";
 
 export function EducationCard({
   school,
@@ -10,21 +10,21 @@ export function EducationCard({
   url,
   milestones = [],
 }) {
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(false);
 
   // Close on Escape and lock page scroll while the popup is open.
   useEffect(() => {
-    if (!open) return
+    if (!open) return;
     function onKeyDown(e) {
-      if (e.key === 'Escape') setOpen(false)
+      if (e.key === "Escape") setOpen(false);
     }
-    document.addEventListener('keydown', onKeyDown)
-    document.body.style.overflow = 'hidden'
+    document.addEventListener("keydown", onKeyDown);
+    document.body.style.overflow = "hidden";
     return () => {
-      document.removeEventListener('keydown', onKeyDown)
-      document.body.style.overflow = ''
-    }
-  }, [open])
+      document.removeEventListener("keydown", onKeyDown);
+      document.body.style.overflow = "";
+    };
+  }, [open]);
 
   return (
     <li className="group relative">
@@ -112,7 +112,7 @@ export function EducationCard({
             >
               <path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01" />
             </svg>
-            <span className="relative">Milestones</span>
+            <span className="relative">milestones</span>
           </button>
         )}
       </div>
@@ -134,8 +134,8 @@ export function EducationCard({
           >
             <div className="flex items-start justify-between gap-4">
               <div>
-                <p className="text-xs font-medium uppercase tracking-wider text-accent">
-                  Milestones
+                <p className="text-xs font-medium tracking-wider text-accent">
+                  milestones
                 </p>
                 <h4 className="mt-1 text-lg font-medium text-heading">
                   {school}
@@ -179,5 +179,5 @@ export function EducationCard({
         </div>
       )}
     </li>
-  )
+  );
 }

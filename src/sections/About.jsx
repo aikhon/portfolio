@@ -4,7 +4,7 @@ import { photos } from "../data/photos.js";
 
 export function About() {
   return (
-    <Section id="about" title="About">
+    <Section id="about" title="about">
       <div className="mt-6 space-y-4 leading-relaxed">
         <p>
           a cool guy with ambitions on life. an acute listener and a fast
