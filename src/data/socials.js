@@ -7,7 +7,7 @@ import {
 } from "../components/icons.jsx";
 
 export const socials = [
-  { label: "gh", url: "https://github.com/messadev", Icon: GitHubIcon },
+  { label: "gh", url: "https://github.com/aikhon", Icon: GitHubIcon },
   {
     label: "link",
     url: "https://linkedin.com/in/ikhlassov",
