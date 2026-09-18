@@ -6,12 +6,10 @@ export const site = {
   resumeUrl: "/cv/cv.pdf",
 };
 
-// Order must match the order the sections render in App.jsx — useScrollSpy
-// maps a scroll position to an index in this list.
 export const navItems = [
-  { id: "home", label: "Home" },
-  { id: "career", label: "Career" },
-  { id: "education", label: "Education" },
-  { id: "work", label: "Work" },
-  { id: "about", label: "About" },
+  { id: "home", label: "home" },
+  { id: "career", label: "career" },
+  { id: "education", label: "education" },
+  { id: "work", label: "work" },
+  { id: "about", label: "about" },
 ];
