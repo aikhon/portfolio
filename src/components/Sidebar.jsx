@@ -28,8 +28,7 @@ export function Sidebar({ open, onClose, activeIndex }) {
       </div>
 
       <SidebarNav activeIndex={activeIndex} onNavigate={onClose} />
-
-      {/* Pushes the theme toggle to the bottom of the sidebar */}
+      
       <div className="flex-1" />
 
       <ThemeToggle />

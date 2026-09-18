@@ -39,14 +39,16 @@ export function CareerCard({
             company
           )}
         </h3>
-        {period && <span className="shrink-0 text-sm text-muted">{period}</span>}
+        {period && (
+          <span className="shrink-0 text-sm text-muted">{period}</span>
+        )}
       </div>
 
       {role && <p className="mt-1 text-accent">{role}</p>}
 
       {(type || location) && (
         <p className="mt-1 text-sm text-muted">
-          {[type, location].filter(Boolean).join(' · ')}
+          {[type, location].filter(Boolean).join(" · ")}
         </p>
       )}
 
@@ -58,7 +60,7 @@ export function CareerCard({
                 aria-hidden="true"
                 className="mt-2 size-1.5 shrink-0 rounded-full bg-accent"
               />
-              <span>{item}</span>
+              <span className="text-sm">{item}</span>
             </li>
           ))}
         </ul>
@@ -74,5 +76,5 @@ export function CareerCard({
         </p>
       )}
     </li>
-  )
+  );
 }

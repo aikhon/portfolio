@@ -1,65 +1,76 @@
 export const education = [
   {
-    school: 'APEC PetroTechnic Higher College',
-    degree: 'Associate Diploma in Software Engineering',
-    period: '2022 — 2026',
-    hint: 'APEC PetroTechnic Higher College is a top ranked college in the country that is located in the capital of oil; Atyrau, Kazakhstan. The college was built by the order of the First President of Republic of Kazakhstan, Nursultan Nazarbayev in order to enhance capabilities of local workers. At the moment, the college is a partner of many high-ranked institutions of Asia.',
-    description: 'Studying calculus, software development, and modern technologies that are in demand of the current SWE job market. Took part in most of the competitions & hackathons, representing the name of the college.',
-    url: 'https://apec.edu.kz',
+    school: "apec petrotechnic",
+    degree: "associate diploma in software engineering",
+    period: "2022 — 2026",
+    hint: "apec petrotechnic higher college is a top ranked college in the country that is located in Atyrau, Kazakhstan. At the moment, the college is a partner of many high-ranked institutions of Asia.",
+    description:
+      "studied calculus. participated a bunch of different contests regarding swe field.",
+    url: "https://apec.edu.kz",
     milestones: [
       {
-        date: '2023 - 2024 (2nd year)',
-        title: 'First Ever Competition - WorldSkills (Web Development)',
-        detail: 'Took part in an international competition in discipline of web development. Received a certificate.',
+        date: "2023 - 2024 (2nd year)",
+        title: "worldskils (web dev)",
+        detail:
+          "took part in an international competition in discipline of web development. received a certificate.",
       },
       {
-        date: '2023 - 2024 (2nd year)',
-        title: 'Intracollegiate Competition (Web Development)',
-        detail: 'Presented one of my first projects built in Python Django; the first framework I have learned. Took 2nd place.',
+        date: "2023 - 2024 (2nd year)",
+        title: "intracollegiate competition (web dev)",
+        detail:
+          "presented one of my first projects built in python django; the first framework i've learned. took 2nd place.",
       },
       {
-        date: '2024 - 2025 (3rd year)',
-        title: 'WorldSkills (IT Solutions in Business)',
-        detail: 'Developed a Business-To-Client (B2C) platform for Atyrau Marathon event with integrated payment on Stripe. Took 1st place.'
+        date: "2024 - 2025 (3rd year)",
+        title: "worldskills (it solutions in business)",
+        detail:
+          "developed a business-to-client (b2c) platform for Atyrau Marathon event with integrated payment on stripe. took 1st place.",
       },
       {
-        date: '2024 - 2025 (3rd year)',
-        title: 'Atyrau Youth Hackathon (EdTech)',
-        detail: "Built an activity tracker within a certain institution for top universities, so an applicant may properly select a desired school. Won the case & 300.000KZT of funding.",
+        date: "2024 - 2025 (3rd year)",
+        title: "atyrau youth hackathon (edtech)",
+        detail:
+          "built an activity tracking platform of certain kazakhstani schools, so an applicant is able to see the metrics. won the case & 300.000KZT of funding.",
       },
       {
-        date: '2024 - 2025 (3rd year)',
-        title: 'First Ever Internship - Tengizchevroil',
-        detail: 'Landed first ever internship in the Finance department of the leading oil & gas company of the Republic of Kazakhstan. Received a recommendation letter from teamlead, Abylai Sariyev.'
+        date: "2024 - 2025 (3rd year)",
+        title: "first internship - tengizchevroil",
+        detail:
+          "landed first ever internship in the finance department of the leading oil & gas company of the Republic of Kazakhstan. received recommendation letter from teamlead, Abylai Sariyev.",
       },
       {
-        date: '2024 - 2025 (3rd year)',
-        title: 'Big Data by Samsung Ltd.',
-        detail: 'Successfully applied and graduated the Big Data program by Samsung Innovation Campus. Received a certificate.',
+        date: "2024 - 2025 (3rd year)",
+        title: "big data by samsung electronics ltd.",
+        detail:
+          "successfully applied and graduated the big data program by samsung innovation campus (sic). received a certificate of completion.",
       },
       {
-        date: '2025 - 2026 (4rd year)',
-        title: 'First Job Offer - Robosoft',
-        detail: 'Landed my first ever job in IT field as an entry-level backend developer, ending up with a junior grade.',
+        date: "2025 - 2026 (4rd year)",
+        title: "first job offer - robosoft",
+        detail:
+          "landed my first ever job in it field as an entry-level backend developer, ending up with a junior grade.",
       },
       {
-        date: '2025 - 2026 (4th year)',
-        title: 'Digital Bridge 2025',
-        detail: 'Got invited to an annual international event forum hosted in Astana, Kazakhstan; Digital Bridge 2025.',
+        date: "2025 - 2026 (4th year)",
+        title: "digital bridge 2025",
+        detail:
+          "got invited to an annual international event forum hosted in Astana, Kazakhstan",
       },
       {
-        date: '2025 - 2025 (4th year)',
-        title: 'KazHackStan 2025',
-        detail: 'Won a prize and competition hosted by the kazakhstani provider, PS.KZ, on an international hack forum hosted in Almaty, Kazakhstan; KazHackStan 2025.',
+        date: "2025 - 2025 (4th year)",
+        title: "kazhackstan 2025",
+        detail:
+          "won a prize and competition hosted by the kazakhstani provider, ps.kz, on an international hack forum hosted in Almaty, Kazakhstan",
       },
     ],
   },
   {
-    school: 'Samsung Innovation Campus (SIC)',
-    degree: 'Certificate on Big Data',
-    period: '2025',
-    hint: 'Samsung Innovation Campus is an international education campus powered by Samsung Electronics Ltd. that teaches specifically demanded CS and/or IT skills such AI, Data Analysis, IoT, etc.',
-    description: 'Learning Data Engineering fundamentals and advanced methodologies that are applied on a practical basis. The course was predominantly completed, using Python and its relevant data manipulation libraries.',
-    url: 'https://samsung-campus.kz/ru',
+    school: "samsung innovation campus (sic)",
+    degree: "certificate on big data",
+    period: "2025",
+    hint: "samsung innovation campus (sic) is an international education campus powered by samsung electronics ltd. that teaches specifically demanded cs and/or it skills such ai, data analysis, iot, etc.",
+    description:
+      "learning data engineering fundamentals and advanced methodologies that are applied on a practical basis. the course was predominantly completed, using python and its relevant data manipulation libraries",
+    url: "https://samsung-campus.kz/ru",
   },
-]
+];
