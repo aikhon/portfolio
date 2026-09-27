@@ -1,25 +1,25 @@
-import { useLayoutEffect, useRef, useState } from 'react'
-import { navItems } from '../data/site.js'
-import { socials } from '../data/socials.js'
+import { useLayoutEffect, useRef, useState } from "react";
+import { navItems } from "../data/site.js";
+import { socials } from "../data/socials.js";
 
 // The nav links plus the bar that slides to whichever section you're in.
 export function SidebarNav({ activeIndex, onNavigate }) {
-  const linkRefs = useRef([])
-  const [bar, setBar] = useState(null)
+  const linkRefs = useRef([]);
+  const [bar, setBar] = useState(null);
 
   // useLayoutEffect (not useEffect) so the bar is placed before the browser
   // paints — otherwise it visibly jumps from 0 on first render.
   useLayoutEffect(() => {
     function place() {
-      const el = linkRefs.current[activeIndex]
-      if (el) setBar({ top: el.offsetTop, height: el.offsetHeight })
+      const el = linkRefs.current[activeIndex];
+      if (el) setBar({ top: el.offsetTop, height: el.offsetHeight });
     }
 
-    place()
+    place();
     // Link geometry shifts when the sidebar reflows.
-    window.addEventListener('resize', place)
-    return () => window.removeEventListener('resize', place)
-  }, [activeIndex])
+    window.addEventListener("resize", place);
+    return () => window.removeEventListener("resize", place);
+  }, [activeIndex]);
 
   return (
     <nav className="mt-10 flex flex-col gap-5" aria-label="Main">
@@ -39,13 +39,13 @@ export function SidebarNav({ activeIndex, onNavigate }) {
           <li key={item.id}>
             <a
               ref={(el) => {
-                linkRefs.current[i] = el
+                linkRefs.current[i] = el;
               }}
               href={`#${item.id}`}
               onClick={onNavigate}
-              aria-current={i === activeIndex ? 'true' : undefined}
+              aria-current={i === activeIndex ? "true" : undefined}
               className={`block rounded-md px-3 py-2 transition-colors hover:bg-canvas hover:text-heading ${
-                i === activeIndex ? 'font-medium text-heading' : ''
+                i === activeIndex ? "font-medium text-heading" : ""
               }`}
             >
               {item.label}
@@ -71,5 +71,5 @@ export function SidebarNav({ activeIndex, onNavigate }) {
         ))}
       </ul>
     </nav>
-  )
+  );
 }

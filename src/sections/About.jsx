@@ -12,7 +12,7 @@ export function About() {
         </p>
         <p>
           i spend most of my time at the laptop, learning stuff. devops,
-          backend, system design. siding with vibecoding.
+          backend, system design. siding with vibecoding unfortunately xD
         </p>
       </div>
 

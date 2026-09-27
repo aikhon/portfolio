@@ -1,7 +1,7 @@
 export const site = {
   name: "Alikhan Ikhlassov",
   shortName: "eekhlassov",
-  tagline: "a backend dev, a runner, and a good guy",
+  tagline: "a full-stack dev, a runner, and a good guy",
   email: "ibatollaalikhan@gmail.com",
   resumeUrl: "/cv/cv.pdf",
 };
