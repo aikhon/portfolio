@@ -4,6 +4,7 @@ import {
   TelegramIcon,
   InstagramIcon,
   WhatsAppIcon,
+  MonkeytypeIcon,
 } from "../components/icons.jsx";
 
 export const socials = [
@@ -20,4 +21,9 @@ export const socials = [
     Icon: InstagramIcon,
   },
   { label: "wa", url: "https://wa.me/87787060150", Icon: WhatsAppIcon },
+  {
+    label: "monkeytype",
+    url: "https://monkeytype.com/profile/pixeln",
+    Icon: MonkeytypeIcon,
+  },
 ];
