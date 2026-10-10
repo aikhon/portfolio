@@ -65,7 +65,7 @@ export function SidebarNav({ activeIndex, onNavigate }) {
               title={label}
               className="flex items-center gap-1 rounded-md px-2 py-1.5 text-muted transition-colors hover:text-heading"
             >
-              <Icon className="size-4.5 shrink-0" />
+              <Icon className={`size-4.5 shrink-0${label === "monkeytype" ? " scale-125" : ""}`} />
             </a>
           </li>
         ))}
