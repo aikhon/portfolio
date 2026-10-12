@@ -1,193 +1,146 @@
 import { site } from "../data/site.js";
-import {
-  Mail,
-  FileText,
-  Terminal,
-  MapPin,
-  Cpu,
-  Trophy,
-  Zap,
-  ArrowDown,
-  Layers,
-} from "lucide-react";
+import { Mail, FileText, ExternalLink, MapPin, Zap, Flame, Trophy } from "lucide-react";
 import { playTactileClick } from "../utils/sound.js";
 
-export function Hero({
-  activeFilter,
-  onFilterChange,
-  onOpenCommandDeck,
-  onCopyEmail,
-}) {
-  const domains = [
-    { id: "all", label: "ALL DISCIPLINES", count: "6 EXP / 4 PROJ" },
-    { id: "swe", label: "FULL-STACK SWE", count: ".NET · REACT · DJANGO" },
-    { id: "systems", label: "SYSTEMS & FIELD IT", count: "LAN · PXE · HARDWARE" },
-    { id: "automation", label: "AUTOMATION", count: "SCRIPTS · API · BOT" },
+export function Hero({ onCopyEmail }) {
+  const telemetry = [
+    {
+      icon: MapPin,
+      label: "Atyrau, Kazakhstan (UTC+5)",
+      highlight: false,
+    },
+    {
+      icon: Trophy,
+      label: "WorldSkills 1st Place Champion",
+      highlight: true,
+    },
+    {
+      icon: Zap,
+      label: "120+ WPM (Monkeytype)",
+      highlight: false,
+      url: "https://monkeytype.com/profile/pixeln",
+    },
+    {
+      icon: Flame,
+      label: "Endurance Distance Runner",
+      highlight: false,
+    },
   ];
 
   return (
-    <section id="home" className="pt-10 sm:pt-16 pb-12">
-      {/* Station Header Chip */}
-      <div className="flex flex-wrap items-center gap-2 pb-4 font-mono text-xs text-muted">
-        <span className="flex items-center gap-1.5 rounded-full border border-line bg-surface px-2.5 py-1 text-heading">
-          <span className="size-2 rounded-full bg-status-ok animate-pulse" />
-          <span className="font-medium">AVAILABLE FOR HIRE</span>
-        </span>
-        <span>//</span>
-        <span className="flex items-center gap-1">
-          <MapPin className="size-3 text-accent" />
-          <span>ATYRAU, KAZAKHSTAN</span>
-        </span>
-      </div>
-
-      {/* Main Title Banner */}
-      <div className="space-y-3">
-        <h1 className="font-mono text-3xl font-bold tracking-tight text-heading sm:text-5xl lg:text-6xl">
+    <section id="hero" className="pt-24 sm:pt-32 pb-14">
+      {/* Name and Title */}
+      <div className="space-y-2">
+        <h1 className="text-3xl sm:text-4xl font-medium tracking-[-0.03em] text-neutral-900 dark:text-neutral-50">
           Alikhan Ikhlassov
         </h1>
-        <p className="font-mono text-sm sm:text-base font-medium text-accent">
-          &gt; full-stack developer &bull; systems &amp; field it engineer
+        <p className="text-base sm:text-lg text-neutral-500 dark:text-neutral-400 font-normal">
+          Full-stack developer &amp; systems engineer
         </p>
       </div>
 
-      {/* Core Mission & Narrative */}
-      <p className="mt-6 text-base sm:text-lg leading-relaxed text-body max-w-2xl">
-        Bridging resilient modern web platforms with real-world infrastructure.
-        From shipping full-stack transit ticketing systems and POS architectures (.NET, React, Python)
-        to configuring containerized field networks and enterprise automation scripts in Western Kazakhstan.
-      </p>
-
-      {/* Engineering Spec Matrix (Tactile 4-grid) */}
-      <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-4">
-        <div className="rounded-lg border border-line bg-surface p-3 transition-colors hover:border-rule">
-          <div className="flex items-center gap-1.5 text-accent font-mono text-[10px] font-semibold uppercase">
-            <Cpu className="size-3" />
-            <span>CORE STACK</span>
-          </div>
-          <p className="mt-1 font-mono text-xs font-medium text-heading">
-            React · .NET · Django
-          </p>
-          <p className="mt-0.5 text-[11px] text-muted">Next.js · Docker · SQL</p>
-        </div>
-
-        <div className="rounded-lg border border-line bg-surface p-3 transition-colors hover:border-rule">
-          <div className="flex items-center gap-1.5 text-accent font-mono text-[10px] font-semibold uppercase">
-            <Trophy className="size-3" />
-            <span>ACCOLADES</span>
-          </div>
-          <p className="mt-1 font-mono text-xs font-medium text-heading">
-            WorldSkills 1st
-          </p>
-          <p className="mt-0.5 text-[11px] text-muted">IT Solutions &amp; Web</p>
-        </div>
-
-        <div className="rounded-lg border border-line bg-surface p-3 transition-colors hover:border-rule">
-          <div className="flex items-center gap-1.5 text-accent font-mono text-[10px] font-semibold uppercase">
-            <Zap className="size-3" />
-            <span>TYPING SPEED</span>
-          </div>
-          <p className="mt-1 font-mono text-xs font-medium text-heading">
-            120+ WPM
-          </p>
-          <p className="mt-0.5 text-[11px] text-muted">Monkeytype (pixeln)</p>
-        </div>
-
-        <div className="rounded-lg border border-line bg-surface p-3 transition-colors hover:border-rule">
-          <div className="flex items-center gap-1.5 text-accent font-mono text-[10px] font-semibold uppercase">
-            <Layers className="size-3" />
-            <span>FIELD DISCIPLINE</span>
-          </div>
-          <p className="mt-1 font-mono text-xs font-medium text-heading">
-            Field IT &amp; LAN
-          </p>
-          <p className="mt-0.5 text-[11px] text-muted">PXE · DHCP · Hardware</p>
-        </div>
+      {/* Narrative */}
+      <div className="mt-6 space-y-4 text-[15px] sm:text-base leading-relaxed text-neutral-600 dark:text-neutral-400">
+        <p>
+          I'm a developer based in Atyrau, Kazakhstan. I focus on building reliable,
+          high-throughput software—from customer-facing web platforms with React, .NET, and Python
+          to hands-on field infrastructure, network routing, and containerized enterprise setups.
+        </p>
+        <p>
+          I believe the best systems are forged through disciplined execution, clean primitives,
+          and fast feedback loops. Whether it's architecting real-time transit ticketing for regional
+          passengers or running 21km on a weekend morning, I value pacing, resilience, and finishing what I start.
+        </p>
       </div>
 
-      {/* Action Buttons */}
-      <div className="mt-8 flex flex-wrap gap-2.5">
+      {/* Telemetry Chips */}
+      <div className="mt-8 flex flex-wrap gap-2">
+        {telemetry.map((item, idx) => {
+          const Icon = item.icon;
+          const content = (
+            <>
+              <Icon className="size-3.5 text-neutral-400 dark:text-neutral-500 shrink-0" />
+              <span>{item.label}</span>
+              {item.url && <ExternalLink className="size-3 text-neutral-400 shrink-0" />}
+            </>
+          );
+
+          if (item.url) {
+            return (
+              <a
+                key={idx}
+                href={item.url}
+                target="_blank"
+                rel="noreferrer"
+                onClick={() => playTactileClick("click")}
+                className="inline-flex items-center gap-1.5 rounded-full border border-black/[0.08] dark:border-white/[0.08] bg-black/[0.02] dark:bg-white/[0.03] px-3 py-1 font-mono text-xs text-neutral-600 dark:text-neutral-400 hover:border-black/25 dark:hover:border-white/25 transition-colors"
+              >
+                {content}
+              </a>
+            );
+          }
+
+          return (
+            <div
+              key={idx}
+              className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1 font-mono text-xs ${
+                item.highlight
+                  ? "border-amber-500/30 bg-amber-500/10 text-amber-700 dark:text-amber-300"
+                  : "border-black/[0.08] dark:border-white/[0.08] bg-black/[0.02] dark:bg-white/[0.03] text-neutral-600 dark:text-neutral-400"
+              }`}
+            >
+              {content}
+            </div>
+          );
+        })}
+      </div>
+
+      {/* Action CTA Buttons */}
+      <div className="mt-8 flex flex-wrap items-center gap-3">
         <button
           type="button"
           onClick={() => {
             onCopyEmail();
             playTactileClick("click");
           }}
-          className="flex items-center gap-2 rounded-lg bg-heading px-4 py-2.5 font-mono text-xs font-medium text-canvas hover:opacity-90 transition-opacity"
+          className="inline-flex items-center gap-2 rounded-lg bg-neutral-900 px-4 py-2 text-sm font-medium text-white hover:bg-neutral-800 dark:bg-white dark:text-neutral-900 dark:hover:bg-neutral-100 transition-colors shadow-xs"
         >
-          <Mail className="size-3.5" />
-          <span>CONTACT ME</span>
+          <Mail className="size-4" />
+          <span>Contact</span>
         </button>
-
-        <a
-          href="#work"
-          onClick={() => playTactileClick("click")}
-          className="flex items-center gap-2 rounded-lg border border-line bg-surface px-4 py-2.5 font-mono text-xs font-medium text-heading hover:bg-surface-active hover:border-rule transition-colors"
-        >
-          <ArrowDown className="size-3.5 text-accent" />
-          <span>VIEW PROJECTS</span>
-        </a>
 
         <a
           href={site.resumeUrl}
           target="_blank"
           rel="noreferrer"
           onClick={() => playTactileClick("click")}
-          className="flex items-center gap-2 rounded-lg border border-line bg-surface px-4 py-2.5 font-mono text-xs font-medium text-heading hover:bg-surface-active hover:border-rule transition-colors"
+          className="inline-flex items-center gap-2 rounded-lg border border-black/[0.08] dark:border-white/[0.08] px-4 py-2 text-sm font-medium text-neutral-900 dark:text-neutral-100 hover:bg-black/[0.02] dark:hover:bg-white/[0.04] transition-colors"
         >
-          <FileText className="size-3.5 text-muted" />
-          <span>CURRICULUM VITAE</span>
+          <FileText className="size-4 text-neutral-400" />
+          <span>Resume (PDF)</span>
         </a>
 
-        <button
-          type="button"
-          onClick={() => {
-            onOpenCommandDeck();
-            playTactileClick("click");
-          }}
-          className="flex items-center gap-2 rounded-lg border border-line bg-surface-subtle px-3 py-2.5 font-mono text-xs text-muted hover:text-heading hover:border-rule transition-colors"
-          title="Open interactive terminal"
+        <a
+          href="https://github.com/aikhon"
+          target="_blank"
+          rel="noreferrer"
+          onClick={() => playTactileClick("click")}
+          className="inline-flex items-center gap-1.5 rounded-lg px-3 py-2 text-sm text-neutral-500 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-white transition-colors"
         >
-          <Terminal className="size-3.5 text-accent" />
-          <span className="hidden sm:inline">TERMINAL</span>
-          <span className="text-[10px] bg-canvas px-1.5 py-0.5 rounded border border-line">⌘K</span>
-        </button>
-      </div>
+          <span>GitHub</span>
+          <ExternalLink className="size-3.5" />
+        </a>
 
-      {/* Interactive Domain Filter Strip */}
-      <div className="mt-10 rounded-xl border border-line bg-surface p-2 sm:p-3 shadow-xs">
-        <div className="mb-2 flex items-center justify-between px-1 font-mono text-[11px] text-muted">
-          <span>// FILTER PERSPECTIVE ACROSS PORTFOLIO:</span>
-          <span className="text-[10px] uppercase text-accent font-semibold">
-            {domains.find((d) => d.id === activeFilter)?.label}
-          </span>
-        </div>
-        <div className="grid grid-cols-2 gap-1.5 sm:grid-cols-4">
-          {domains.map((dom) => {
-            const isSelected = activeFilter === dom.id;
-            return (
-              <button
-                key={dom.id}
-                type="button"
-                onClick={() => {
-                  onFilterChange(dom.id);
-                  playTactileClick("switch");
-                }}
-                className={`flex flex-col items-start rounded-lg p-2 text-left transition-all ${
-                  isSelected
-                    ? "bg-surface-active border border-rule text-heading shadow-xs"
-                    : "border border-transparent text-muted hover:bg-surface-subtle hover:text-heading"
-                }`}
-              >
-                <span className="font-mono text-[11px] font-semibold">
-                  {dom.label}
-                </span>
-                <span className="font-mono text-[9px] text-muted mt-0.5 truncate w-full">
-                  {dom.count}
-                </span>
-              </button>
-            );
-          })}
-        </div>
+        <a
+          href="https://t.me/ikhlasov"
+          target="_blank"
+          rel="noreferrer"
+          onClick={() => playTactileClick("click")}
+          className="inline-flex items-center gap-1.5 rounded-lg px-3 py-2 text-sm text-neutral-500 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-white transition-colors"
+        >
+          <span>Telegram</span>
+          <ExternalLink className="size-3.5" />
+        </a>
       </div>
     </section>
   );
