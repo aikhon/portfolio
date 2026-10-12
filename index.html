@@ -1,30 +1,35 @@
 <!doctype html>
-<html lang="en" class="scroll-pt-20">
+<html lang="en" class="scroll-pt-16">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.jpg" />
-        <meta name="theme-color" content="#f7f3f0" />
+        <link rel="icon" type="image/jpeg" href="/favicon.jpg" />
+        <meta name="theme-color" content="#0b0d12" />
 
-        <title>aikhon — Portfolio</title>
-        <meta name="description" content="swe, fullstack" />
+        <title>Alikhan Ikhlassov (eekhlassov) — Full-Stack &amp; Systems Engineer</title>
+        <meta
+            name="description"
+            content="Portfolio of Alikhan Ikhlassov (eekhlassov / aikhon): Full-Stack Developer & Systems/Field IT Engineer in Atyrau, Kazakhstan. React, .NET, Python, Docker, LAN."
+        />
 
-        <meta property="og:title" content="eekhlassov - portfolio" />
+        <meta property="og:title" content="Alikhan Ikhlassov — Full-Stack &amp; Systems Engineer" />
         <meta
             property="og:description"
-            content="swe. love shipping. love building."
+            content="Resilient full-stack web platforms and hands-on systems infrastructure in Western Kazakhstan."
         />
         <meta property="og:type" content="website" />
 
-        <!-- Runs before React boots, so dark mode doesn't flash light on load. -->
+        <!-- Pre-hydration theme setup to eliminate FOUC -->
         <script>
-            const stored = localStorage.getItem("theme");
-            const prefersDark = window.matchMedia(
-                "(prefers-color-scheme: dark)",
-            ).matches;
-            if (stored === "dark" || (!stored && prefersDark)) {
-                document.documentElement.classList.add("dark");
-            }
+            try {
+                const stored = localStorage.getItem("theme");
+                const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+                if (stored === "dark" || (!stored && prefersDark)) {
+                    document.documentElement.classList.add("dark");
+                } else if (stored === "light") {
+                    document.documentElement.classList.remove("dark");
+                }
+            } catch (e) {}
         </script>
     </head>
 

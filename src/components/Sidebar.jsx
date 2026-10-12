@@ -3,7 +3,7 @@ import { SidebarNav } from "./SidebarNav.jsx";
 import { Copy, FileDown, X, Terminal, Cpu } from "lucide-react";
 import { playTactileClick } from "../utils/sound.js";
 
-export function Sidebar({ open, onClose, activeIndex, onCopyEmail }) {
+export function Sidebar({ open, onClose, activeIndex, onCopyEmail, isDark, toggleTheme }) {
   return (
     <aside
       className={`fixed inset-y-0 left-0 z-40 flex w-72 flex-col border-r border-line bg-surface px-5 py-6 transition-transform duration-200 lg:translate-x-0 ${
@@ -86,8 +86,25 @@ export function Sidebar({ open, onClose, activeIndex, onCopyEmail }) {
       </div>
 
       {/* Hardware / Architecture Spec Footer */}
-      <div className="border-t border-line pt-4">
-        <div className="flex items-center justify-between font-mono text-[10px] text-muted">
+      <div className="border-t border-line pt-4 space-y-3">
+        <div className="flex items-center justify-between">
+          <button
+            type="button"
+            onClick={() => {
+              toggleTheme?.();
+              playTactileClick("switch");
+            }}
+            className="flex items-center gap-2 rounded-md border border-line bg-surface-subtle px-2.5 py-1.5 font-mono text-[11px] text-muted hover:text-heading hover:border-rule transition-colors w-full justify-between"
+          >
+            <span className="flex items-center gap-1.5">
+              <span>THEME MODE:</span>
+              <span className="text-heading font-medium uppercase">{isDark ? "DARK" : "LIGHT"}</span>
+            </span>
+            <span className="text-[10px] text-accent font-semibold">[T]</span>
+          </button>
+        </div>
+
+        <div className="flex items-center justify-between font-mono text-[10px] text-muted px-1">
           <div className="flex items-center gap-1.5">
             <Cpu className="size-3 text-muted" />
             <span>REACT 19 · TW4</span>
