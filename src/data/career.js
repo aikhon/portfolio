@@ -5,6 +5,8 @@ export const career = [
     period: "present",
     location: "Atyrau, Kazakhstan",
     type: "full-time",
+    domain: "systems",
+    domainLabel: "Systems & Infrastructure",
     highlights: [
       "built a introduction web-app of kaspi montazh service (kms) via next, vercel",
       "installed computer setups for the field workers in container-based offices",
@@ -17,6 +19,8 @@ export const career = [
     period: "2026",
     location: "Atyrau, Kazakhstan (remote)",
     type: "full-time",
+    domain: "swe",
+    domainLabel: "Software Engineering",
     highlights: [
       "migrated the legacy database from google docs to tursodb (remote mysql-based database)",
       "developed and supported three products: POS system, qrmenu with cms (content management system), and automation of table reservations process",
@@ -42,6 +46,8 @@ export const career = [
     period: "2025",
     location: "Astana, Kazakhstan (remote)",
     type: "part-time",
+    domain: "swe",
+    domainLabel: "Software Engineering",
     highlights: [
       "built python management scripts for data manipulation within the development environment",
       "developed well-functioning api endpoints, following the criteria given by the management",
@@ -62,8 +68,14 @@ export const career = [
     period: "2026",
     location: "Atyrau, Kazakhstan",
     type: "apprenticeship",
+    domain: "systems",
+    domainLabel: "Systems & Infrastructure",
     tags: ["windows", "network", "tcp/ip", "udp", "dhcp", "pxe", "lan"],
     url: "https://www.ilf.com",
+    highlights: [
+      "configured enterprise local area networks (LAN), DHCP scopes, PXE network boot environments, and TCP/IP routing",
+      "maintained workstation fleet integrity and network reliability for engineering staff",
+    ],
   },
   {
     company: "tengizchevroil (tco)",
@@ -71,6 +83,8 @@ export const career = [
     period: "may, 2026",
     location: "Atyrau, Kazakhstan",
     type: "internship",
+    domain: "automation",
+    domainLabel: "Enterprise Automation",
     highlights: [
       "developed an autonomous python script for parsing the onedrive folder and finding requested data within it",
     ],
@@ -90,6 +104,8 @@ export const career = [
     period: "june, 2025",
     location: "Atyrau, Kazakhstan",
     type: "internship",
+    domain: "automation",
+    domainLabel: "Enterprise Automation",
     highlights: [
       "received a recommendation letter for remarkable job from the teamlead, Abylai Sariyev.",
     ],

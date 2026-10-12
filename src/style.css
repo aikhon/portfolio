@@ -1,87 +1,122 @@
 @import "tailwindcss";
 
-/* Self-hosted so there's no third-party request. One variable file per subset
-   covers weights 100-800, and unicode-range means only used subsets download. */
+/* JetBrains Mono Variable for code, telemetry, badges & technical data */
 @import "@fontsource-variable/jetbrains-mono";
 
-/* Manual dark mode via a .dark class on <html>, instead of Tailwind's default
-   prefers-color-scheme. Lets the toggle in main.js override the OS setting. */
 @custom-variant dark (&:where(.dark, .dark *));
 
-/* Warm palette built around the #f7f3f0 canvas. Defined as plain custom
-   properties so .dark can swap them — that way the markup uses bg-canvas /
-   text-body and switches themes on its own, with no dark: classes. */
+/* Industrial Precision Palette:
+   Light mode: Architectural drafting vellum, bone white, burnt amber.
+   Dark mode: Deep matte obsidian, precision zinc borders, safety amber. */
 :root {
-  --canvas: #f7f3f0;
-  --surface: #f1ebe5;
-  /* Hairlines on controls and cards — deliberately quiet */
-  --line: #e2d9d1;
-  /* Structural dividers between sections — stronger, so the page reads as
-     distinct blocks rather than one continuous column */
-  --rule: #d3c5b7;
-  --body: #5f564e;
-  --heading: #1c1917;
-  --muted: #6e635a;
-  --accent: #a85a2a;
+  --canvas: #f7f5ef;
+  --surface: #ffffff;
+  --surface-subtle: #efebe1;
+  --surface-active: #e5decfa0;
+  --line: #ded8cb;
+  --rule: #cfc7b5;
+  --body: #475569;
+  --heading: #0f172a;
+  --muted: #64748b;
+  --accent: #ea580c;
+  --accent-subtle: rgba(234, 88, 12, 0.08);
+  --accent-glow: rgba(234, 88, 12, 0.2);
+  --grid-dot: rgba(15, 23, 42, 0.05);
+  --status-ok: #16a34a;
 }
 
 .dark {
-  --canvas: #1a1817;
-  --surface: #211e1c;
-  --line: #35302c;
-  --rule: #4b423b;
-  --body: #b3aaa2;
-  --heading: #f5f1ee;
-  --muted: #8a7f76;
-  --accent: #d98c4a;
+  --canvas: #0b0d12;
+  --surface: #12151e;
+  --surface-subtle: #171b26;
+  --surface-active: #202636;
+  --line: #1e2433;
+  --rule: #293144;
+  --body: #94a3b8;
+  --heading: #f8fafc;
+  --muted: #64748b;
+  --accent: #f97316;
+  --accent-subtle: rgba(249, 115, 22, 0.12);
+  --accent-glow: rgba(249, 115, 22, 0.25);
+  --grid-dot: rgba(248, 250, 252, 0.04);
+  --status-ok: #22c55e;
 }
 
 @theme inline {
   --color-canvas: var(--canvas);
   --color-surface: var(--surface);
+  --color-surface-subtle: var(--surface-subtle);
+  --color-surface-active: var(--surface-active);
   --color-line: var(--line);
   --color-rule: var(--rule);
   --color-body: var(--body);
   --color-heading: var(--heading);
   --color-muted: var(--muted);
   --color-accent: var(--accent);
+  --color-accent-subtle: var(--accent-subtle);
+  --color-accent-glow: var(--accent-glow);
+  --color-status-ok: var(--status-ok);
 
-  /* The "available" dot in the hero, breathing between two greens */
+  --font-mono: "JetBrains Mono Variable", ui-monospace, "SFMono-Regular", Menlo, Monaco, Consolas, monospace;
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  --default-font-family: var(--font-sans);
+
   --animate-pulse-dot: pulse-dot 2.4s ease-in-out infinite;
-
-  /* Slides a gradient across the milestones button on hover */
   --animate-shimmer: shimmer 2.5s linear infinite;
-
-  --font-mono: "JetBrains Mono Variable", ui-monospace, "SFMono-Regular",
-    Menlo, Consolas, monospace;
-
-  /* Preflight applies this to <html>, so the whole page inherits the mono. */
-  --default-font-family: var(--font-mono);
 }
 
 html {
   scroll-behavior: smooth;
-  background: var(--canvas);
+  background-color: var(--canvas);
 }
 
-/* green-700 at rest, green-400 at the peak. Animating background-color rather
-   than opacity keeps the dot fully solid the whole way through. */
+body {
+  background-color: var(--canvas);
+  background-image: radial-gradient(var(--grid-dot) 1px, transparent 1px);
+  background-size: 24px 24px;
+  background-position: 0 0;
+  color: var(--body);
+}
+
+/* Subtle architectural borders and tactile transitions */
+::selection {
+  background-color: var(--accent);
+  color: #ffffff;
+}
+
 @keyframes pulse-dot {
   0%,
   100% {
-    background-color: #15803d;
+    opacity: 1;
+    transform: scale(1);
   }
   50% {
-    background-color: #4ade80;
+    opacity: 0.45;
+    transform: scale(0.92);
   }
 }
 
-/* Pans a wide gradient sideways; pairs with a 200% background-size so only
-   part of it shows at a time, giving a looping colour sweep. */
 @keyframes shimmer {
   to {
     background-position: -200% center;
   }
+}
+
+/* Custom minimal scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--canvas);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--line);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--rule);
 }
 
 @media (prefers-reduced-motion: reduce) {
