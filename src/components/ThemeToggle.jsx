@@ -1,5 +1,5 @@
+import { Sun, Moon } from "lucide-react";
 import { useTheme } from "../hooks/useTheme.js";
-import { MoonIcon, SunIcon } from "./icons.jsx";
 
 export function ThemeToggle() {
   const { isDark, toggle } = useTheme();
@@ -7,12 +7,11 @@ export function ThemeToggle() {
   return (
     <button
       type="button"
+      aria-label="Toggle color theme"
       onClick={toggle}
-      aria-label="Toggle dark mode"
-      className="mt-6 flex items-center gap-4 rounded-md px-3 py-2 text-sm transition-colors hover:bg-canvas hover:text-heading"
+      className="fixed top-4 right-4 sm:top-6 sm:right-6 z-50 inline-flex h-9 w-9 items-center justify-center rounded-full border border-black/10 dark:border-white/15 bg-white/80 dark:bg-black/80 backdrop-blur-md text-neutral-500 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-white hover:border-black/30 dark:hover:border-white/30 transition-colors cursor-pointer"
     >
-      {isDark ? <SunIcon /> : <MoonIcon />}
-      {isDark ? "light" : "dark"}
+      {isDark ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
     </button>
   );
 }
