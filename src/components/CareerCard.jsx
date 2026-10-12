@@ -1,79 +1,101 @@
+import { ExternalLink, MapPin, Calendar, Briefcase, CheckCircle2 } from "lucide-react";
+import { playTactileClick } from "../utils/sound.js";
+
 export function CareerCard({
   company,
   role,
   period,
   location,
   type,
+  domain,
+  domainLabel,
   highlights = [],
   tags = [],
   url,
 }) {
-  // The company name links out when there's a url; the whole card stays a
-  // block so the hover surface matches the other sections.
   return (
-    <li className="group -mx-4 rounded-lg border border-transparent p-4 transition-all duration-200 ease-out hover:border-line hover:bg-surface">
-      <div className="flex items-baseline justify-between gap-3">
-        <h3 className="text-lg font-medium text-heading">
-          {url ? (
-            <a
-              href={url}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-1 hover:text-accent"
-            >
-              {company}
-              <svg
-                aria-hidden="true"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="size-4 transition-transform duration-200 ease-out group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+    <li className="group rounded-xl border border-line bg-surface p-5 sm:p-6 transition-all duration-200 hover:border-rule hover:shadow-md">
+      {/* Header Bar with Company & Period */}
+      <div className="flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between">
+        <div className="flex items-baseline gap-2">
+          <h3 className="font-mono text-base sm:text-lg font-semibold text-heading">
+            {url ? (
+              <a
+                href={url}
+                target="_blank"
+                rel="noreferrer"
+                onClick={() => playTactileClick("click")}
+                className="inline-flex items-center gap-1.5 hover:text-accent transition-colors"
               >
-                <path d="M7 17 17 7M9 7h8v8" />
-              </svg>
-            </a>
-          ) : (
-            company
-          )}
-        </h3>
-        {period && (
-          <span className="shrink-0 text-sm text-muted">{period}</span>
+                <span>{company}</span>
+                <ExternalLink className="size-3.5 text-muted transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </a>
+            ) : (
+              company
+            )}
+          </h3>
+        </div>
+
+        <div className="flex items-center gap-2 font-mono text-xs text-muted shrink-0">
+          <Calendar className="size-3 text-accent" />
+          <span className="font-medium text-heading/80 uppercase">{period}</span>
+        </div>
+      </div>
+
+      {/* Role and Domain Badge */}
+      <div className="mt-2 flex flex-wrap items-center gap-2">
+        <p className="font-mono text-xs sm:text-sm font-semibold text-accent uppercase">
+          {role}
+        </p>
+        {domainLabel && (
+          <span className="rounded border border-line bg-surface-subtle px-2 py-0.5 font-mono text-[10px] text-muted">
+            {domainLabel}
+          </span>
         )}
       </div>
 
-      {role && <p className="mt-1 text-accent">{role}</p>}
-
+      {/* Location & Employment Type Metadata */}
       {(type || location) && (
-        <p className="mt-1 text-sm text-muted">
-          {[type, location].filter(Boolean).join(" · ")}
-        </p>
+        <div className="mt-2 flex flex-wrap items-center gap-3 font-mono text-xs text-muted">
+          {location && (
+            <span className="flex items-center gap-1">
+              <MapPin className="size-3 text-muted" />
+              <span>{location}</span>
+            </span>
+          )}
+          {type && (
+            <span className="flex items-center gap-1">
+              <Briefcase className="size-3 text-muted" />
+              <span className="capitalize">{type}</span>
+            </span>
+          )}
+        </div>
       )}
 
+      {/* Engineering Highlights */}
       {highlights.length > 0 && (
-        <ul className="mt-3 space-y-2">
-          {highlights.map((item) => (
-            <li key={item} className="flex gap-3 leading-relaxed">
-              <span
-                aria-hidden="true"
-                className="mt-2 size-1.5 shrink-0 rounded-full bg-accent"
-              />
-              <span className="text-sm">{item}</span>
+        <ul className="mt-4 space-y-2 border-t border-line/60 pt-3">
+          {highlights.map((item, idx) => (
+            <li key={idx} className="flex items-start gap-2.5 text-sm text-body leading-relaxed">
+              <span className="mt-1.5 size-1.5 rounded-full bg-accent shrink-0" />
+              <span>{item}</span>
             </li>
           ))}
         </ul>
       )}
 
+      {/* Tech Stack Chips */}
       {tags.length > 0 && (
-        <p className="mt-3 flex flex-wrap gap-2 text-xs text-muted">
+        <div className="mt-4 flex flex-wrap gap-1.5 pt-1">
           {tags.map((tag) => (
-            <span key={tag} className="rounded bg-surface px-2 py-1">
+            <span
+              key={tag}
+              className="rounded-md border border-line/70 bg-surface-subtle px-2 py-0.5 font-mono text-[11px] text-muted transition-colors hover:text-heading hover:border-rule"
+            >
               {tag}
             </span>
           ))}
-        </p>
+        </div>
       )}
     </li>
   );

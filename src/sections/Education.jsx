@@ -4,8 +4,13 @@ import { education } from "../data/education.js";
 
 export function Education() {
   return (
-    <Section id="education" title="education">
-      <ul className="mt-8 space-y-2 ">
+    <Section
+      id="education"
+      code="03"
+      title="accolades & education"
+      subtitle="Degrees, WorldSkills championships, hackathon grants & specialized campuses"
+    >
+      <ul className="mt-6 space-y-4">
         {education.map((item) => (
           <EducationCard key={item.school} {...item} />
         ))}
