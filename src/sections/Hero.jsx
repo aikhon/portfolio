@@ -1,52 +1,23 @@
-import { site } from "../data/site.js";
+import { ExternalLink } from '../components/ExternalLink.jsx'
+import { PhotoStrip } from '../components/PhotoStrip.jsx'
+import { site } from '../data/site.js'
 
 export function Hero() {
   return (
-    <section
-      id="home"
-      className="pt-16 sm:pt-24 pb-10 sm:pb-10 flex flex-col gap-5"
-    >
-      <h1 className="text-4xl font-semibold tracking-tight text-heading sm:text-5xl">
-        Alikhan{" "}
-        <a href="https://github.com/aikhon" className="text-muted">
-          (aikhon)
-        </a>{" "}
-        Ikhlassov
-      </h1>
-
-      <p className="text-xl leading-relaxed">
-        a full-stack developer. a system administrator.
-      </p>
-
-      <div className="flex flex-wrap gap-3">
-        <a
-          href={`mailto:${site.email}`}
-          className="rounded-md bg-heading px-4 py-2 text-sm font-medium text-canvas hover:opacity-85"
-        >
-          get in touch
-        </a>
-        <a
-          href="#work"
-          className="rounded-md border border-line px-4 py-2 text-sm font-medium text-heading hover:bg-surface"
-        >
-          see my work
-        </a>
-        <a
-          href={site.resumeUrl}
-          target="_blank"
-          rel="noreferrer"
-          className="inline-flex items-center gap-1.5 rounded-md border border-line px-4 py-2 text-sm font-medium text-heading hover:bg-surface"
-        >
-          view cv
-        </a>
+    <section id="home" className="intro" aria-labelledby="intro-heading">
+      <p className="intro-hello">hey, I’m Alikhan <span aria-hidden="true">✳</span></p>
+      <h1 id="intro-heading">Alikhan Ikhlassov<span className="accent">.</span></h1>
+      <p className="intro-description">A full-stack developer, a runner, and a curious person<br className="desktop-break" /> from Atyrau, Kazakhstan.</p>
+      <div className="intro-story prose">
+        <p>I build web products and work on the systems behind them. My work spans bus ticketing, restaurant software, and the small automations that make someone’s day easier.</p>
+        <p>Currently an IT engineer at <a href="#career">Kaspi Montazh Service</a>. Previously, I built and supported three restaurant products at <a href="#career">thetochka</a> and worked on backend APIs at <a href="#career">Robosoft</a>.</p>
       </div>
-
-      <div className="flex flex-wrap gap-2 items-center">
-        <div className="rounded-full h-2.5 w-2.5 bg-green-700 animate-pulse-dot motion-reduce:animate-none"></div>
-        <p className="text-[13px]">available for Kazakhstan</p>
-        &bull;
-        <p className="text-[13px]">open to remote positions</p>
+      <div className="intro-links">
+        <a className="text-link" href={`mailto:${site.email}`}>say hello <span aria-hidden="true">↗</span></a>
+        <ExternalLink className="text-link" href={site.resumeUrl}>view my cv <span aria-hidden="true">↗</span></ExternalLink>
+        <span className="availability"><span className="status-dot" aria-hidden="true" />open to opportunities</span>
       </div>
+      <PhotoStrip />
     </section>
-  );
+  )
 }

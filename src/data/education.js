@@ -1,76 +1,31 @@
+export const highlights = [
+  { title: '1st place at WorldSkills.', detail: 'Built an Atyrau Marathon platform with Stripe payments for the IT Solutions in Business competition.' },
+  { title: 'Won the Atyrau Youth Hackathon EdTech case.', detail: 'Built a school activity tracking platform for applicants; awarded ₸300,000 in funding.' },
+  { title: 'A prize at KazHackStan 2025.', detail: 'Won a PS.kz competition at the international hack forum in Almaty.' },
+]
+
 export const education = [
   {
-    school: "apec petrotechnic",
-    degree: "associate diploma in software engineering",
-    period: "2022 — 2026",
-    hint: "apec petrotechnic higher college is a top ranked college in the country that is located in Atyrau, Kazakhstan. At the moment, the college is a partner of many high-ranked institutions of Asia.",
-    description:
-      "studied calculus. participated a bunch of different contests regarding swe field.",
-    url: "https://apec.edu.kz",
+    school: 'APEC Petrotechnic',
+    degree: 'Associate diploma in Software Engineering',
+    period: '2022–2026',
+    url: 'https://apec.edu.kz',
     milestones: [
-      {
-        date: "2023 - 2024 (2nd year)",
-        title: "worldskils (web dev)",
-        detail:
-          "took part in an international competition in discipline of web development. received a certificate.",
-      },
-      {
-        date: "2023 - 2024 (2nd year)",
-        title: "intracollegiate competition (web dev)",
-        detail:
-          "presented one of my first projects built in python django; the first framework i've learned. took 2nd place.",
-      },
-      {
-        date: "2024 - 2025 (3rd year)",
-        title: "worldskills (it solutions in business)",
-        detail:
-          "developed a business-to-client (b2c) platform for Atyrau Marathon event with integrated payment on stripe. took 1st place.",
-      },
-      {
-        date: "2024 - 2025 (3rd year)",
-        title: "atyrau youth hackathon (edtech)",
-        detail:
-          "built an activity tracking platform of certain kazakhstani schools, so an applicant is able to see the metrics. won the case & 300.000KZT of funding.",
-      },
-      {
-        date: "2024 - 2025 (3rd year)",
-        title: "first internship - tengizchevroil",
-        detail:
-          "landed first ever internship in the finance department of the leading oil & gas company of the Republic of Kazakhstan. received recommendation letter from teamlead, Abylai Sariyev.",
-      },
-      {
-        date: "2024 - 2025 (3rd year)",
-        title: "big data by samsung electronics ltd.",
-        detail:
-          "successfully applied and graduated the big data program by samsung innovation campus (sic). received a certificate of completion.",
-      },
-      {
-        date: "2025 - 2026 (4rd year)",
-        title: "first job offer - robosoft",
-        detail:
-          "landed my first ever job in it field as an entry-level backend developer, ending up with a junior grade.",
-      },
-      {
-        date: "2025 - 2026 (4th year)",
-        title: "digital bridge 2025",
-        detail:
-          "got invited to an annual international event forum hosted in Astana, Kazakhstan",
-      },
-      {
-        date: "2025 - 2025 (4th year)",
-        title: "kazhackstan 2025",
-        detail:
-          "won a prize and competition hosted by the kazakhstani provider, ps.kz, on an international hack forum hosted in Almaty, Kazakhstan",
-      },
+      { date: '2023–2024', title: 'WorldSkills · Web Development', detail: 'Participated in the web development competition and received a certificate.' },
+      { date: '2023–2024', title: '2nd place · College Web Development Competition', detail: 'Presented one of my first projects, built with Django—the first framework I learned.' },
+      { date: '2024–2025', title: '1st place · WorldSkills IT Solutions in Business', detail: 'Built a B2C platform for the Atyrau Marathon with integrated Stripe payments.' },
+      { date: '2024–2025', title: 'Atyrau Youth Hackathon · EdTech', detail: 'Built a platform for applicants to explore school activity metrics. Won the case and ₸300,000 in funding.' },
+      { date: '2025', title: 'First internship · Tengizchevroil', detail: 'Joined the finance department and received a recommendation letter from team lead Abylai Sariyev.' },
+      { date: '2025', title: 'Samsung Innovation Campus · Big Data', detail: 'Completed the Big Data program and received a certificate, working with Python and data analysis libraries.' },
+      { date: '2025–2026', title: 'First developer role · Robosoft', detail: 'Started as an entry-level backend developer and progressed to junior.' },
+      { date: '2025', title: 'Digital Bridge', detail: 'Invited to the annual international technology forum in Astana.' },
+      { date: '2025', title: 'KazHackStan', detail: 'Won a prize in a competition hosted by PS.kz at the international hack forum in Almaty.' },
     ],
   },
   {
-    school: "samsung innovation campus (sic)",
-    degree: "certificate on big data",
-    period: "2025",
-    hint: "samsung innovation campus (sic) is an international education campus powered by samsung electronics ltd. that teaches specifically demanded cs and/or it skills such ai, data analysis, iot, etc.",
-    description:
-      "learning data engineering fundamentals and advanced methodologies that are applied on a practical basis. the course was predominantly completed, using python and its relevant data manipulation libraries",
-    url: "https://samsung-campus.kz/ru",
+    school: 'Samsung Innovation Campus',
+    degree: 'Big Data certificate',
+    period: '2025',
+    url: 'https://samsung-campus.kz/ru',
   },
-];
+]
