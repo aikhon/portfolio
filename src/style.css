@@ -1,91 +1,195 @@
-@import "tailwindcss";
+@import "@fontsource-variable/geist/wght.css";
+@import "@fontsource-variable/jetbrains-mono/wght.css";
 
-/* Self-hosted so there's no third-party request. One variable file per subset
-   covers weights 100-800, and unicode-range means only used subsets download. */
-@import "@fontsource-variable/jetbrains-mono";
-
-/* Manual dark mode via a .dark class on <html>, instead of Tailwind's default
-   prefers-color-scheme. Lets the toggle in main.js override the OS setting. */
-@custom-variant dark (&:where(.dark, .dark *));
-
-/* Warm palette built around the #f7f3f0 canvas. Defined as plain custom
-   properties so .dark can swap them — that way the markup uses bg-canvas /
-   text-body and switches themes on its own, with no dark: classes. */
 :root {
-  --canvas: #f7f3f0;
-  --surface: #f1ebe5;
-  /* Hairlines on controls and cards — deliberately quiet */
-  --line: #e2d9d1;
-  /* Structural dividers between sections — stronger, so the page reads as
-     distinct blocks rather than one continuous column */
-  --rule: #d3c5b7;
-  --body: #5f564e;
-  --heading: #1c1917;
-  --muted: #6e635a;
-  --accent: #a85a2a;
+  color-scheme: light;
+  --canvas: #faf9f6;
+  --heading: #252822;
+  --body: #585b54;
+  --muted: #666a60;
+  --line: #e5e4dc;
+  --accent: #49664a;
+  --hover: #f0f0e9;
+  --selection: #dfe7d8;
+  font-family: "Geist Variable", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
-.dark {
-  --canvas: #1a1817;
-  --surface: #211e1c;
-  --line: #35302c;
-  --rule: #4b423b;
-  --body: #b3aaa2;
-  --heading: #f5f1ee;
-  --muted: #8a7f76;
-  --accent: #d98c4a;
+:root.dark {
+  color-scheme: dark;
+  --canvas: #191a18;
+  --heading: #eeeee7;
+  --body: #b3b6ac;
+  --muted: #999d91;
+  --line: #34362f;
+  --accent: #b3c99e;
+  --hover: #23251f;
+  --selection: #3d4b34;
 }
 
-@theme inline {
-  --color-canvas: var(--canvas);
-  --color-surface: var(--surface);
-  --color-line: var(--line);
-  --color-rule: var(--rule);
-  --color-body: var(--body);
-  --color-heading: var(--heading);
-  --color-muted: var(--muted);
-  --color-accent: var(--accent);
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 40px; background: var(--canvas); }
+body { margin: 0; color: var(--body); font-size: 15px; line-height: 1.75; }
+::selection { color: var(--heading); background: var(--selection); }
+a { color: inherit; text-decoration: none; text-underline-offset: 4px; }
+a, button, summary { -webkit-tap-highlight-color: transparent; }
+a:hover { color: var(--accent); }
+button { font: inherit; }
+button, summary { cursor: pointer; }
+a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; border-radius: 2px; }
+h1, h2, h3, p, figure { margin: 0; }
+h1, h2, h3, strong { color: var(--heading); }
+strong { font-weight: 550; }
+ul, ol { margin: 0; padding: 0; list-style: none; }
+img { display: block; max-width: 100%; }
+svg { display: block; }
+main:focus { outline: none; }
+.page-shell { width: min(100% - 48px, 640px); margin-inline: auto; }
+.skip-link { position: fixed; top: 12px; left: 12px; z-index: 10; padding: 8px 16px; background: var(--canvas); color: var(--heading); transform: translateY(-180%); }
+.skip-link:focus { transform: translateY(0); }
 
-  /* The "available" dot in the hero, breathing between two greens */
-  --animate-pulse-dot: pulse-dot 2.4s ease-in-out infinite;
+.site-header { display: flex; align-items: center; justify-content: space-between; padding-top: 38px; }
+.wordmark { font-size: 28px; font-weight: 650; line-height: 1; letter-spacing: -2px; color: var(--heading); padding-block: 8px; }
+.wordmark span, .accent { color: var(--accent); }
+.site-header nav { display: flex; gap: 26px; align-items: center; font-size: 13px; }
+.site-header nav > a { display: inline-flex; align-items: center; gap: 4px; min-height: 44px; }
+.theme-toggle { width: 36px; height: 36px; border: 1px solid var(--line); border-radius: 50%; background: transparent; color: var(--muted); display: grid; place-items: center; transition: background 160ms ease, color 160ms ease; }
+.theme-toggle:hover { background: var(--hover); color: var(--heading); }
 
-  /* Slides a gradient across the milestones button on hover */
-  --animate-shimmer: shimmer 2.5s linear infinite;
+.intro { padding-top: 77px; }
+.intro-hello { color: var(--accent); font-size: 13px; margin-bottom: 15px; }
+.intro-hello span { display: inline-block; margin-left: 6px; font-size: 18px; vertical-align: -1px; }
+h1 { font-size: clamp(32px, 5.5vw, 43px); font-weight: 550; letter-spacing: -1.9px; line-height: 1.15; }
+.intro-description { font-size: 17px; line-height: 1.7; margin-top: 18px; color: var(--heading); letter-spacing: -.2px; }
+.intro-story { margin-top: 26px; }
+.prose p + p { margin-top: 17px; }
+.prose a, .education-summary a { color: var(--heading); text-decoration: underline; text-decoration-color: var(--line); transition: text-decoration-color 160ms ease; }
+.prose a:hover, .education-summary a:hover { color: var(--accent); text-decoration-color: var(--accent); }
+.intro-links { display: flex; align-items: center; flex-wrap: wrap; gap: 12px 25px; margin-top: 22px; font-size: 13px; }
+.text-link { color: var(--heading); text-decoration: underline; text-decoration-color: var(--line); }
+.text-link:hover { text-decoration-color: var(--accent); }
+.text-link span { display: inline-block; padding-left: 3px; }
+.availability { display: inline-flex; align-items: center; gap: 7px; color: var(--muted); font-size: 11px; margin-left: auto; }
+.status-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
 
-  --font-mono: "JetBrains Mono Variable", ui-monospace, "SFMono-Regular",
-    Menlo, Consolas, monospace;
+.photo-strip { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 13px; padding-block: 10px; margin-top: 37px; }
+.photo-strip figure { min-width: 0; }
+.photo-strip figure:nth-child(1) { transform: rotate(-2deg); }
+.photo-strip figure:nth-child(2) { transform: translateY(7px) rotate(1deg); }
+.photo-strip figure:nth-child(3) { transform: rotate(-1.5deg); }
+.photo-strip a { display: block; border-radius: 4px; transition: transform 220ms ease; }
+.photo-strip a:hover { transform: translateY(-5px) rotate(1deg); }
+.photo-strip img { width: 100%; height: auto; aspect-ratio: 1.12; object-fit: cover; border-radius: 4px; background: var(--hover); }
+.photo-strip figcaption { margin-top: 10px; text-align: center; color: var(--muted); font-family: "JetBrains Mono Variable", monospace; font-size: 10px; line-height: 1.6; }
 
-  /* Preflight applies this to <html>, so the whole page inherits the mono. */
-  --default-font-family: var(--font-mono);
+.section { margin-top: 52px; padding-top: 25px; border-top: 1px solid var(--line); }
+.section-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 15px; margin-bottom: 22px; }
+.eyebrow { color: var(--muted); font-family: "JetBrains Mono Variable", monospace; font-size: 10px; line-height: 1.7; font-weight: 450; letter-spacing: 1px; text-transform: uppercase; }
+.section-note { color: var(--muted); font-size: 11px; }
+.project-list > li + li { border-top: 1px solid var(--line); }
+.project-link { display: grid; grid-template-columns: 26px minmax(0, 1fr); gap: 15px; padding: 14px 10px 23px; margin-inline: -10px; border-radius: 4px; transition: background 180ms ease; }
+.project-list > li + li .project-link { padding-top: 23px; }
+.project-link:hover { color: var(--body); background: var(--hover); }
+.project-number { color: var(--muted); font-family: "JetBrains Mono Variable", monospace; font-size: 10px; padding-top: 5px; }
+.project-link h3 { font-size: 17px; font-weight: 550; letter-spacing: -.3px; display: flex; justify-content: space-between; align-items: baseline; }
+.project-arrow { font-size: 20px; font-weight: 400; color: var(--muted); transition: transform 180ms ease; }
+.project-link:hover .project-arrow { color: var(--accent); transform: translate(2px, -2px); }
+.project-link p { margin-top: 6px; font-size: 14px; line-height: 1.75; max-width: 510px; }
+.project-stack { display: block; margin-top: 12px; color: var(--muted); font-family: "JetBrains Mono Variable", monospace; font-size: 10px; line-height: 1.8; }
+.project-domain { display: inline-block; margin-top: 12px; font-size: 12px; color: var(--accent); }
+
+.career-list { margin-top: -6px; }
+.career-entry summary { display: grid; grid-template-columns: 88px minmax(0, 1fr) 16px; align-items: baseline; gap: 10px; padding: 14px 0; list-style: none; border-radius: 2px; }
+summary::-webkit-details-marker { display: none; }
+.career-list > li + li { border-top: 1px solid var(--line); }
+.career-period { font-family: "JetBrains Mono Variable", monospace; font-size: 10px; color: var(--muted); }
+.career-name { display: flex; flex-direction: column; min-width: 0; }
+.company { color: var(--heading); font-size: 14px; font-weight: 500; }
+.role { font-size: 12px; color: var(--muted); line-height: 1.6; margin-top: 1px; }
+summary:hover .company, .milestones summary:hover { color: var(--accent); }
+.disclosure-icon { display: inline-block; align-self: center; flex-shrink: 0; position: relative; width: 12px; height: 12px; color: var(--muted); }
+.disclosure-icon::before, .disclosure-icon::after { content: ""; position: absolute; background: currentColor; left: 1px; top: 5px; width: 10px; height: 1px; }
+.disclosure-icon::after { transform: rotate(90deg); transition: transform 160ms ease; }
+details[open] > summary .disclosure-icon::after { transform: rotate(0); }
+.career-detail { padding: 0 26px 21px 98px; font-size: 13px; line-height: 1.75; }
+.career-meta { font-size: 11px; color: var(--muted); margin-bottom: 12px; }
+.career-detail ul { list-style: disc; padding-left: 16px; }
+.career-detail li + li { margin-top: 7px; }
+.stack-list { font-size: 10px; font-family: "JetBrains Mono Variable", monospace; line-height: 1.9; color: var(--muted); margin-top: 14px; }
+.career-detail .text-link { display: inline-block; margin-top: 12px; font-size: 12px; }
+
+.highlight-list { display: grid; gap: 16px; font-size: 14px; }
+.highlight-list li { display: grid; grid-template-columns: 17px minmax(0, 1fr); gap: 12px; }
+.highlight-mark { color: var(--accent); }
+.education-summary { border-left: 1px solid var(--line); padding-left: 18px; margin-top: 29px; font-size: 13px; }
+.education-summary p + p { margin-top: 16px; }
+.education-summary span { display: block; margin-top: 2px; color: var(--muted); font-size: 12px; }
+.milestones { margin-top: 19px; }
+.milestones summary { display: inline-flex; align-items: center; gap: 14px; min-height: 36px; font-size: 12px; list-style: none; }
+.milestone-list { border-left: 1px solid var(--line); margin: 18px 0 0 4px; padding-left: 23px; }
+.milestone-list li { position: relative; padding-bottom: 22px; }
+.milestone-list li::before { content: ""; position: absolute; left: -27px; top: 7px; width: 7px; height: 7px; border-radius: 50%; background: var(--canvas); border: 1px solid var(--accent); }
+.milestone-date { font-size: 10px; font-family: "JetBrains Mono Variable", monospace; color: var(--muted); }
+.milestone-list h3 { margin-top: 3px; font-size: 13px; font-weight: 500; }
+.milestone-list p { margin-top: 4px; font-size: 13px; }
+
+.personal-note { margin-top: 23px; font-family: Georgia, serif; font-size: 23px; font-style: italic; color: var(--accent); letter-spacing: -.6px; }
+.contact { margin-top: 56px; padding-top: 27px; border-top: 1px solid var(--line); }
+.contact h2 { font-size: 26px; line-height: 1.3; letter-spacing: -.8px; font-weight: 500; margin-top: 18px; }
+.contact > p:not(.eyebrow) { margin-top: 13px; font-size: 14px; max-width: 500px; }
+.contact-email { display: inline-flex; align-items: baseline; gap: 16px; max-width: 100%; font-size: 17px; color: var(--heading); letter-spacing: -.4px; text-decoration: underline; text-decoration-color: var(--line); margin-top: 20px; overflow-wrap: anywhere; }
+.contact-email:hover { text-decoration-color: var(--accent); }
+.social-links { display: flex; flex-wrap: wrap; column-gap: 23px; row-gap: 3px; margin-top: 25px; font-size: 12px; }
+.social-links a { padding-block: 6px; }
+.site-footer { display: flex; align-items: center; justify-content: space-between; gap: 18px; margin-top: 56px; padding-block: 21px 34px; border-top: 1px solid var(--line); font-size: 10px; color: var(--muted); }
+.site-footer a { padding-block: 8px; white-space: nowrap; }
+
+@media (min-width: 800px) {
+  .intro { animation: appear 500ms ease-out both; }
+  @keyframes appear { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
 }
-
-html {
-  scroll-behavior: smooth;
-  background: var(--canvas);
+@media (max-width: 640px) {
+  .page-shell { width: calc(100% - 40px); }
+  .site-header { padding-top: 19px; }
+  .site-header nav { gap: 20px; }
+  .intro { padding-top: 48px; }
+  h1 { letter-spacing: -1.4px; }
+  .intro-description { font-size: 16px; }
+  .desktop-break { display: none; }
+  .intro-story { margin-top: 23px; }
+  .availability { width: 100%; margin-left: 0; margin-top: 2px; }
+  .photo-strip { gap: 9px; margin-top: 28px; }
+  .photo-strip img { aspect-ratio: .88; }
+  .photo-strip figcaption { font-size: 8px; }
+  .section { margin-top: 40px; padding-top: 22px; }
+  .section-note { display: none; }
+  .career-entry summary { grid-template-columns: 73px minmax(0, 1fr) 14px; gap: 8px; }
+  .career-detail { padding-left: 81px; padding-right: 8px; }
+  .career-period { font-size: 9px; }
+  .project-link { gap: 10px; grid-template-columns: 20px minmax(0, 1fr); }
+  .contact { margin-top: 42px; }
+  .contact h2 { font-size: 24px; }
+  .social-links { column-gap: 21px; }
 }
-
-/* green-700 at rest, green-400 at the peak. Animating background-color rather
-   than opacity keeps the dot fully solid the whole way through. */
-@keyframes pulse-dot {
-  0%,
-  100% {
-    background-color: #15803d;
-  }
-  50% {
-    background-color: #4ade80;
-  }
+@media (max-width: 359px) {
+  .page-shell { width: calc(100% - 32px); }
+  .site-header nav { gap: 14px; }
+  h1 { font-size: 29px; }
+  .career-detail { padding-left: 0; }
+  .contact-email { font-size: 15px; gap: 8px; }
 }
-
-/* Pans a wide gradient sideways; pairs with a 200% background-size so only
-   part of it shows at a time, giving a looping colour sweep. */
-@keyframes shimmer {
-  to {
-    background-position: -200% center;
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+@media print {
+  :root, :root.dark { --canvas: #fff; --heading: #111; --body: #333; --muted: #555; --line: #ddd; --accent: #333; }
+  .page-shell { width: 100%; max-width: 680px; }
+  .site-header, .photo-strip, .site-footer, .theme-toggle, .milestones { display: none; }
+  .intro { padding-top: 0; }
+  .section, .contact { margin-top: 28px; }
+  a { text-decoration: none; }
+  .career-entry, .project-list li, .highlight-list li { break-inside: avoid; }
 }

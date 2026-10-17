@@ -1,11 +1,11 @@
-// Shared shell for the Work / Education / About sections: the top rule, the
-// vertical rhythm, and the small uppercase label. `id` is what the sidebar
-// links to and what the scroll indicator tracks.
-export function Section({ id, title, children }) {
+export function Section({ id, title, aside, children }) {
   return (
-    <section id={id} className="border-t border-rule py-16">
-      <h2 className="text-sm font-medium tracking-wider text-muted">{title}</h2>
+    <section id={id} className="section" aria-labelledby={`${id}-heading`}>
+      <div className="section-heading">
+        <h2 id={`${id}-heading`} className="eyebrow">{title}</h2>
+        {aside}
+      </div>
       {children}
     </section>
-  );
+  )
 }

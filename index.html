@@ -1,35 +1,30 @@
 <!doctype html>
-<html lang="en" class="scroll-pt-20">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.jpg" />
-        <meta name="theme-color" content="#f7f3f0" />
-
-        <title>aikhon — Portfolio</title>
-        <meta name="description" content="swe, fullstack" />
-
-        <meta property="og:title" content="eekhlassov - portfolio" />
-        <meta
-            property="og:description"
-            content="swe. love shipping. love building."
-        />
-        <meta property="og:type" content="website" />
-
-        <!-- Runs before React boots, so dark mode doesn't flash light on load. -->
-        <script>
-            const stored = localStorage.getItem("theme");
-            const prefersDark = window.matchMedia(
-                "(prefers-color-scheme: dark)",
-            ).matches;
-            if (stored === "dark" || (!stored && prefersDark)) {
-                document.documentElement.classList.add("dark");
-            }
-        </script>
-    </head>
-
-    <body class="bg-canvas text-body antialiased">
-        <div id="root"></div>
-        <script type="module" src="/src/main.jsx"></script>
-    </body>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="theme-color" content="#faf9f6" />
+    <meta name="color-scheme" content="light dark" />
+    <title>Alikhan Ikhlassov — Full-stack Developer</title>
+    <meta name="description" content="Full-stack developer from Atyrau, Kazakhstan. Building web products, backend systems, and useful automations. Selected work, experience, and a little about me." />
+    <meta name="author" content="Alikhan Ikhlassov" />
+    <meta property="og:title" content="Alikhan Ikhlassov — Full-stack Developer" />
+    <meta property="og:description" content="Web products, backend systems, and useful automations. A developer, a runner, and a curious person from Atyrau, Kazakhstan." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary" />
+    <script>
+      (() => {
+        let theme
+        try { theme = localStorage.getItem('theme') } catch {}
+        const dark = theme === 'dark' || (theme !== 'light' && window.matchMedia('(prefers-color-scheme: dark)').matches)
+        document.documentElement.classList.toggle('dark', dark)
+        document.querySelector('meta[name="theme-color"]').content = dark ? '#191a18' : '#faf9f6'
+      })()
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>

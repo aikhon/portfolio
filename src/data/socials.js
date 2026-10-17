@@ -1,29 +1,8 @@
-import {
-  GitHubIcon,
-  LinkedInIcon,
-  TelegramIcon,
-  InstagramIcon,
-  WhatsAppIcon,
-  MonkeytypeIcon,
-} from "../components/icons.jsx";
-
 export const socials = [
-  { label: "gh", url: "https://github.com/aikhon", Icon: GitHubIcon },
-  {
-    label: "link",
-    url: "https://linkedin.com/in/ikhlassov",
-    Icon: LinkedInIcon,
-  },
-  { label: "tg", url: "https://t.me/ikhlasov", Icon: TelegramIcon },
-  {
-    label: "ig",
-    url: "https://instagram.com/alikhanikhlasov",
-    Icon: InstagramIcon,
-  },
-  { label: "wa", url: "https://wa.me/87787060150", Icon: WhatsAppIcon },
-  {
-    label: "monkeytype",
-    url: "https://monkeytype.com/profile/pixeln",
-    Icon: MonkeytypeIcon,
-  },
-];
+  { label: 'GitHub', url: 'https://github.com/aikhon' },
+  { label: 'LinkedIn', url: 'https://linkedin.com/in/ikhlassov' },
+  { label: 'Telegram', url: 'https://t.me/ikhlasov' },
+  { label: 'Instagram', url: 'https://instagram.com/alikhanikhlasov' },
+  { label: 'WhatsApp', url: 'https://wa.me/77787060150' },
+  { label: 'Monkeytype', url: 'https://monkeytype.com/profile/pixeln' },
+]
