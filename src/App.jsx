@@ -7,8 +7,11 @@ import { Work } from './sections/Work.jsx'
 import { Career } from './sections/Career.jsx'
 import { Education } from './sections/Education.jsx'
 import { About } from './sections/About.jsx'
+import { useScrollReveal } from './hooks/useScrollReveal.js'
 
 export default function App() {
+  const mainRef = useScrollReveal()
+
   return (
     <div className="page-shell">
       <a href="#main" className="skip-link">Skip to content</a>
@@ -21,13 +24,13 @@ export default function App() {
           <ThemeToggle />
         </nav>
       </header>
-      <main id="main" tabIndex={-1}>
+      <main id="main" ref={mainRef} tabIndex={-1}>
         <Hero />
         <Work />
         <Career />
         <Education />
         <About />
-        <section className="contact" aria-labelledby="contact-heading">
+        <section className="contact" data-reveal aria-labelledby="contact-heading">
           <p className="eyebrow">a good place to start</p>
           <h2 id="contact-heading">Let’s build something useful.</h2>
           <p>I’m open to roles in Kazakhstan and remote teams. If my work sounds like a fit, I’d love to hear from you.</p>
