@@ -66,7 +66,8 @@ main:focus { outline: none; }
 
 .intro { padding-top: 77px; }
 .intro-hello { color: var(--accent); font-size: 13px; margin-bottom: 15px; }
-.intro-hello span { display: inline-block; margin-left: 6px; font-size: 18px; vertical-align: -1px; }
+.intro-star { display: inline-block; margin-left: 6px; vertical-align: -3px; }
+.star-ray { transform-origin: 12px 10px; }
 h1 { font-size: clamp(32px, 5.5vw, 43px); font-weight: 550; letter-spacing: -1.9px; line-height: 1.15; }
 .intro-description { font-size: 17px; line-height: 1.7; margin-top: 18px; color: var(--heading); letter-spacing: -.2px; }
 .intro-story { margin-top: 26px; }
@@ -146,9 +147,9 @@ details[open] > summary .disclosure-icon::after { transform: rotate(0); }
 .contact { margin-top: 56px; padding-top: 27px; border-top: 1px solid var(--line); }
 .contact h2 { font-size: 26px; line-height: 1.3; letter-spacing: -.8px; font-weight: 500; margin-top: 18px; }
 .contact > p:not(.eyebrow) { margin-top: 13px; font-size: 14px; max-width: 500px; }
-.contact-email { display: inline-flex; align-items: baseline; gap: 16px; max-width: 100%; font-size: 17px; color: var(--heading); letter-spacing: -.4px; text-decoration: underline; text-decoration-color: var(--line); margin-top: 20px; overflow-wrap: anywhere; transition: color 160ms ease, text-decoration-color 160ms ease; }
+.contact-email { display: inline-flex; align-items: baseline; gap: 16px; max-width: 100%; font-size: 17px; color: var(--heading); letter-spacing: -.4px; text-decoration: underline; text-decoration-color: var(--line); margin-top: 20px; white-space: nowrap; transition: color 160ms ease, text-decoration-color 160ms ease; }
 .contact-email:hover { text-decoration-color: var(--accent); }
-.contact-email span { transition: transform 200ms var(--motion-ease); }
+.contact-email span { flex-shrink: 0; transition: transform 200ms var(--motion-ease); }
 .contact-email:is(:hover, :focus-visible) span { transform: translate(2px, -2px); }
 .social-links { display: flex; flex-wrap: wrap; column-gap: 23px; row-gap: 3px; margin-top: 25px; font-size: 12px; }
 .social-links a { padding-block: 6px; }
@@ -163,7 +164,12 @@ details[open] > summary .disclosure-icon::after { transform: rotate(0); }
   from { opacity: 0; transform: translateY(4px); }
   to { opacity: 1; transform: translateY(0); }
 }
+@keyframes star-beams {
+  0%, 100% { transform: scaleY(1); }
+  50% { transform: scaleY(.5); }
+}
 @media (prefers-reduced-motion: no-preference) {
+  .star-ray { animation: star-beams 2.8s ease-in-out infinite; }
   .intro > * { animation: enter 480ms var(--motion-ease) both; }
   .intro > :nth-child(2) { animation-delay: 40ms; }
   .intro > :nth-child(3) { animation-delay: 80ms; }
