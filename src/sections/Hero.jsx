@@ -5,7 +5,17 @@ import { site } from '../data/site.js'
 export function Hero() {
   return (
     <section id="home" className="intro" aria-labelledby="intro-heading">
-      <p className="intro-hello">hey, I’m Alikhan <span aria-hidden="true">✳</span></p>
+      <p className="intro-hello">
+        hey, I’m Alikhan{' '}
+        <svg className="intro-star" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none" />
+          {[0, 45, 90, 135, 180, 225, 270, 315].map((angle) => (
+            <g key={angle} transform={`rotate(${angle} 12 12)`}>
+              <path className="star-ray" d="M12 10V3" />
+            </g>
+          ))}
+        </svg>
+      </p>
       <h1 id="intro-heading">Alikhan Ikhlassov<span className="accent">.</span></h1>
       <p className="intro-description">A full-stack developer, a runner, and a curious person<br className="desktop-break" /> from Atyrau, Kazakhstan.</p>
       <div className="intro-story prose">
