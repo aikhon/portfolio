@@ -147,9 +147,9 @@ details[open] > summary .disclosure-icon::after { transform: rotate(0); }
 .contact { margin-top: 56px; padding-top: 27px; border-top: 1px solid var(--line); }
 .contact h2 { font-size: 26px; line-height: 1.3; letter-spacing: -.8px; font-weight: 500; margin-top: 18px; }
 .contact > p:not(.eyebrow) { margin-top: 13px; font-size: 14px; max-width: 500px; }
-.contact-email { display: inline-flex; align-items: baseline; gap: 16px; max-width: 100%; font-size: 17px; color: var(--heading); letter-spacing: -.4px; text-decoration: underline; text-decoration-color: var(--line); margin-top: 20px; overflow-wrap: anywhere; transition: color 160ms ease, text-decoration-color 160ms ease; }
+.contact-email { display: inline-flex; align-items: baseline; gap: 16px; max-width: 100%; font-size: 17px; color: var(--heading); letter-spacing: -.4px; text-decoration: underline; text-decoration-color: var(--line); margin-top: 20px; white-space: nowrap; transition: color 160ms ease, text-decoration-color 160ms ease; }
 .contact-email:hover { text-decoration-color: var(--accent); }
-.contact-email span { transition: transform 200ms var(--motion-ease); }
+.contact-email span { flex-shrink: 0; transition: transform 200ms var(--motion-ease); }
 .contact-email:is(:hover, :focus-visible) span { transform: translate(2px, -2px); }
 .social-links { display: flex; flex-wrap: wrap; column-gap: 23px; row-gap: 3px; margin-top: 25px; font-size: 12px; }
 .social-links a { padding-block: 6px; }
