@@ -164,7 +164,12 @@ details[open] > summary .disclosure-icon::after { transform: rotate(0); }
   from { opacity: 0; transform: translateY(4px); }
   to { opacity: 1; transform: translateY(0); }
 }
+@keyframes star-beams {
+  0%, 100% { transform: scaleY(1); }
+  50% { transform: scaleY(.5); }
+}
 @media (prefers-reduced-motion: no-preference) {
+  .star-ray { animation: star-beams 2.8s ease-in-out infinite; }
   .intro > * { animation: enter 480ms var(--motion-ease) both; }
   .intro > :nth-child(2) { animation-delay: 40ms; }
   .intro > :nth-child(3) { animation-delay: 80ms; }
