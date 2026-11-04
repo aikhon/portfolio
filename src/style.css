@@ -168,7 +168,40 @@ details[open] > summary .disclosure-icon::after { transform: rotate(0); }
   0%, 100% { transform: scaleY(1); }
   50% { transform: scaleY(.5); }
 }
+@keyframes status-ping {
+  0% { transform: scale(1); opacity: .5; }
+  80%, 100% { transform: scale(3); opacity: 0; }
+}
+@keyframes dot-hop {
+  0%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-5px); }
+  70% { transform: translateY(1px); }
+}
+@keyframes accent-pop {
+  0% { opacity: 0; transform: scale(0); }
+  60% { opacity: 1; transform: scale(1.4); }
+  100% { opacity: 1; transform: scale(1); }
+}
+@keyframes rule-draw {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+/* cursor-following spotlight on project cards */
+.project-link { position: relative; isolation: isolate; }
+.project-link::before { content: ""; position: absolute; inset: 0; z-index: -1; border-radius: inherit; background: radial-gradient(220px circle at var(--spot-x, 50%) var(--spot-y, 50%), var(--selection), transparent 70%); opacity: 0; transition: opacity 240ms ease; pointer-events: none; }
+.project-link:hover::before { opacity: .55; }
+.status-dot { position: relative; }
+.status-dot::after { content: ""; position: absolute; inset: 0; border-radius: 50%; background: var(--accent); opacity: 0; }
+.wordmark span, h1 .accent { display: inline-block; }
+
 @media (prefers-reduced-motion: no-preference) {
+  .status-dot::after { animation: status-ping 2.4s var(--motion-ease) infinite; }
+  .wordmark:hover span { animation: dot-hop 520ms var(--motion-ease); }
+  h1 .accent { animation: accent-pop 520ms var(--motion-ease) 450ms both; }
+  .reveal-ready .section, .reveal-ready .contact { border-top-color: transparent; position: relative; }
+  .reveal-ready .section::before, .reveal-ready .contact::before { content: ""; position: absolute; top: -1px; inset-inline: 0; height: 1px; background: var(--line); transform: scaleX(0); transform-origin: left; }
+  .reveal-ready .is-revealed.section::before, .reveal-ready .is-revealed.contact::before { animation: rule-draw 900ms var(--motion-ease) both; }
   .star-ray { animation: star-beams 2.8s ease-in-out infinite; }
   .intro > * { animation: enter 480ms var(--motion-ease) both; }
   .intro > :nth-child(2) { animation-delay: 40ms; }

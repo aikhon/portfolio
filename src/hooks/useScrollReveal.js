@@ -9,10 +9,13 @@ export function useScrollReveal() {
     if (!scope || preference.matches || !window.IntersectionObserver || !scope.animate) return
 
     const animations = new Map()
+    const reveal = (element) => element.classList.add('is-revealed')
+    scope.classList.add('reveal-ready')
     const observer = new window.IntersectionObserver((entries) => {
       for (const { target, isIntersecting } of entries) {
         if (!isIntersecting) continue
         observer.unobserve(target)
+        reveal(target)
         if (preference.matches || target.contains(document.activeElement)) continue
 
         // Animate only on arrival; content stays visible without motion support.
@@ -30,6 +33,7 @@ export function useScrollReveal() {
 
     function stop() {
       observer.disconnect()
+      scope.querySelectorAll('[data-reveal]').forEach(reveal)
       animations.forEach((animation) => animation.cancel())
       animations.clear()
     }
@@ -41,6 +45,7 @@ export function useScrollReveal() {
     function revealFocusedSection(event) {
       const section = event.target.closest('[data-reveal]')
       if (!section) return
+      reveal(section)
       observer.unobserve(section)
       animations.get(section)?.cancel()
       animations.delete(section)
@@ -51,6 +56,7 @@ export function useScrollReveal() {
     window.addEventListener('beforeprint', stop)
     return () => {
       stop()
+      scope.classList.remove('reveal-ready')
       preference.removeEventListener('change', followPreference)
       scope.removeEventListener('focusin', revealFocusedSection)
       window.removeEventListener('beforeprint', stop)
