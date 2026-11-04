@@ -182,6 +182,10 @@ details[open] > summary .disclosure-icon::after { transform: rotate(0); }
   60% { opacity: 1; transform: scale(1.4); }
   100% { opacity: 1; transform: scale(1); }
 }
+@keyframes rule-draw {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
 
 /* cursor-following spotlight on project cards */
 .project-link { position: relative; isolation: isolate; }
@@ -195,6 +199,9 @@ details[open] > summary .disclosure-icon::after { transform: rotate(0); }
   .status-dot::after { animation: status-ping 2.4s var(--motion-ease) infinite; }
   .wordmark:hover span { animation: dot-hop 520ms var(--motion-ease); }
   h1 .accent { animation: accent-pop 520ms var(--motion-ease) 450ms both; }
+  .reveal-ready .section, .reveal-ready .contact { border-top-color: transparent; position: relative; }
+  .reveal-ready .section::before, .reveal-ready .contact::before { content: ""; position: absolute; top: -1px; inset-inline: 0; height: 1px; background: var(--line); transform: scaleX(0); transform-origin: left; }
+  .reveal-ready .is-revealed.section::before, .reveal-ready .is-revealed.contact::before { animation: rule-draw 900ms var(--motion-ease) both; }
   .star-ray { animation: star-beams 2.8s ease-in-out infinite; }
   .intro > * { animation: enter 480ms var(--motion-ease) both; }
   .intro > :nth-child(2) { animation-delay: 40ms; }
