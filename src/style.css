@@ -168,6 +168,12 @@ details[open] > summary .disclosure-icon::after { transform: rotate(0); }
   0%, 100% { transform: scaleY(1); }
   50% { transform: scaleY(.5); }
 }
+
+/* cursor-following spotlight on project cards */
+.project-link { position: relative; isolation: isolate; }
+.project-link::before { content: ""; position: absolute; inset: 0; z-index: -1; border-radius: inherit; background: radial-gradient(220px circle at var(--spot-x, 50%) var(--spot-y, 50%), var(--selection), transparent 70%); opacity: 0; transition: opacity 240ms ease; pointer-events: none; }
+.project-link:hover::before { opacity: .55; }
+
 @media (prefers-reduced-motion: no-preference) {
   .star-ray { animation: star-beams 2.8s ease-in-out infinite; }
   .intro > * { animation: enter 480ms var(--motion-ease) both; }
